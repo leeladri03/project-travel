@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  p{
+    font-size: 20px;
+    color: blue;
+    border: 10px solid red;
+    border-radius: 10px;
+    width: 200px;
+   
+    
+  }
+</style>
+<body>
+  <!-- <h1>Calculator</h1>
+     <button onclick="leelaa()">=</button>
+     
+
+
+     <button id="1" onclick="leela('1')">1</button>
+     <button id="2" onclick="leela('2')">2</button>
+     <button id="3" onclick="leela('3')">3</button>
+     <button id="4" onclick="leela('4')">4</button>
+     <button id="5" onclick="leela('5')">5</button>
+     <button id="+" onclick="leela('+')">+</button>
+     <button id="-" onclick="leela('-')">-</button>
+
+      <button id="backspace" onclick="leelaTobackspace()">Backspace</button>
+      <button id="clear" onclick="leelaToclear()">Clear</button>
+     
+      <p id="result"> </p> -->
+
+      <input type="number" id="a" placeholder="Enter a number">
+      <button onclick="check()">Check</button>
+      <button id="clear" onclick="leelaToclear()">Clear</button>
+      <button id="backspace" onclick="leelaTobackspace()">Backspace</button>
+
+      
+      <p id="output"></p>
+    
+     
+</body>
+ 
+<script>
+//  let resultElement = document.getElementById('result');
+//      function leela(value) {
+//          resultElement.innerText += value;
+//      }
+//      function leelaa() {
+//          let result = eval(resultElement.innerText);
+//          resultElement.innerText = result;
+//      }
+//      function leelaToclear() {
+//          resultElement.innerText = '';
+//      }
+//       function leelaTobackspace() {
+//           resultElement.innerText = resultElement.innerText.slice(0, -1);
+//       }
+
+     let outputElement = document.getElementById('output');
+     function check() {
+
+          let value = document.getElementById('a').value;
+          if (value >= 90) {
+              outputElement.innerText = "A";
+          } else if (value >=80) {
+              outputElement.innerText = "B";
+          } else if (value >= 70) {
+              outputElement.innerText = "C";
+          }
+          else if (value >= 60) {
+              outputElement.innerText = "D";
+          } else if (value >= 50) {
+              outputElement.innerText = "E";
+          } else {
+              outputElement.innerText = "F";
+          }
+      }
+      function leelaToclear() {
+          let inputElement = document.getElementById('a');
+
+          inputElement.value = '';
+          outputElement.innerText = '';
+      }
+      function leelaTobackspace() {
+          let inputElement = document.getElementById('a');
+          inputElement.value = inputElement.value.slice(0, -1);
+         
+      }
+    
+  
+</script>
+</html>

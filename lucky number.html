@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lucky Number Checker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Lucky Number Checker</h2>
+  <p>Enter a number to see if it's your lucky number!</p>
+
+  <input type="number" id="userInput" placeholder="Enter your number">
+  <br><br>
+  <button onclick="checkLucky()">Check</button>
+
+  <div id="result"></div>
+
+  <script>
+    
+    const luckyNumber = 27;
+
+    function checkLucky() {
+      const userInput = document.getElementById("userInput").value;
+      const result = document.getElementById("result");
+
+      if (userInput === "") {
+        result.innerText = "Please enter a number!";
+        result.style.color = "red";
+        return;
+      }
+
+      const userNumber = parseInt(userInput);
+
+      if (userNumber === luckyNumber) {
+        result.innerText = " Congratulations! You found the Lucky Number!";
+        result.style.color = "green";
+      } else if (Math.abs(userNumber - luckyNumber) <= 2) {
+        result.innerText = " You're so close to the Lucky Number!";
+        result.style.color = "orange";
+      } else {
+        result.innerText = " Sorry, that's not the Lucky Number.";
+        result.style.color = "darkred";
+      }
+    }
+  </script>
+
+</body>
+</html>

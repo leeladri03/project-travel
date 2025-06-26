@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        font-size: 20px;
+        color: blue;
+        border: 10px solid red;
+        border-radius: 10px;
+        width: 200px;
+    }
+    </style>
+<body>
+    <input type="number" id="a" placeholder="Enter a number">
+    <button onclick="check()">check</button>
+    <p id="output"></p>
+</body>
+</html>
+<script>
+    
+    function check() {
+          let a = document.getElementById('a').value;
+    let outputElement = document.getElementById('output');
+        
+        if (a % 2 === 0) {
+            outputElement.innerText = "even";
+        } else {
+            outputElement.innerText = "odd";
+        }
+    }
+    </script>

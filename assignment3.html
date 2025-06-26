@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        font-size: 20px;
+        color: white;
+        border: 10px solid black;
+        border-radius: 10px ;
+        width: 200px;
+    }
+    </style>
+<body>
+    <h1>number range checker</h1>
+    <input type="number" id="a" placeholder="Enter a number">
+    <button onclick="check()">check</button>
+    <p id="output"></p>
+    
+</body>
+<script>
+
+    function check() {
+         let a = document.getElementById("a").value;
+            let output = document.getElementById("output");
+
+        if (a >= 1 && a <= 10) {
+                    output.innerText = "The number is in the range of 1 to 10";
+            output.style.backgroundColor = "green";
+        } else if (a >= 11 && a <= 20) {
+            output.innerText = "The number is in the range of 11 to 20";
+            output.style.backgroundColor = "blue";
+        } else if (a >= 21 && a <= 30) {
+            output.innerText = "The number is in the range of 21 to 30";
+            output.style.backgroundColor = "yellow";
+        } else {
+            output.innerText = "The number is out of range";
+            output.style.backgroundColor = "red";
+        }
+            }
+       </script>
+       </html>

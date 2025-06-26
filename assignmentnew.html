@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+  
+      
+<body>
+    <div class="container">
+        <h1>mcq  html and java script</h1>
+        <div class="question" id="q1">
+      <label>1. What does HTML stand for?</label><br>
+      <input type="radio" id="q1a" name="q1" value="A">A: Hyper Text Markup Language<br>
+      <input type="radio" id="q1b" name="q1" value="B">B: High Text Markup Language<br>
+      <input type="radio" id="q1c" name="q1" value="C">C: Hyperlink and Text Markup Language<br>
+      <input type="radio" id="q1d" name="q1" value="D">D: Home Tool Markup Language<br>
+    
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+      <label>2. What is the correct HTML element for inserting a line break?</label><br>
+      <input type="radio" id="q2a" name="q2" value="A">A: &lt;break&gt;<br>
+      <input type="radio" id="q2b" name="q2" value="B">B: &lt;br&gt;<br>
+      <input type="radio" id="q2c" name="q2" value="C">C: &lt;lb&gt;<br>
+      <input type="radio" id="q2d" name="q2" value="D">D: &lt;line&gt;<br>
+    
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+      <label>3. How do you write "Hello World" in an alert box?</label><br>
+      <input type="radio" id="q3a" name="q3" value="A">A: msg("Hello World")<br>
+      <input type="radio" id="q3b" name="q3" value="B">B: alert("Hello World")<br>
+      <input type="radio" id="q3c" name="q3" value="C">C: alertBox("Hello World")<br>
+      <input type="radio" id="q3d" name="q3" value="D">D: display("Hello World")<br>
+      
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+      <label>4. Which HTML element is used to define an internal style sheet?</label><br>
+      <input type="radio" id="q4a" name="q4" value="A">A: &lt;style&gt;<br>
+      <input type="radio" id="q4b" name="q4" value="B">B: &lt;css&gt;<br>
+      <input type="radio" id="q4c" name="q4" value="C">C: &lt;script&gt;<br>
+      <input type="radio" id="q4d" name="q4" value="D">D: &lt;head&gt;<br>
+      
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question" id="q5">
+      <label>5. How do you create a function in JavaScript?</label><br>
+      <input type="radio" id="q5a" name="q5" value="A">A: function = myFunction()<br>
+      <input type="radio" id="q5b" name="q5" value="B">B: function:myFunction()<br>
+      <input type="radio" id="q5c" name="q5" value="C">C: function myFunction()<br>
+      <input type="radio" id="q5d" name="q5" value="D">D: create function myFunction()<br>
+      
+    </div>
+    
+            
+           
+            <button onclick="submitanswer()">Submit</button>
+            <p id="output1"></p>
+            <p id="output2"></p>
+            <p id="output3"></p>
+            <p id="output4"></p>
+            <p id="output5"></p>
+
+            <p id="score"></p>
+</body>
+</html>
+
+<script>
+    function submitanswer(){
+      let output1 = document.getElementById('output1');
+      let output2 = document.getElementById('output2');
+      let output3 = document.getElementById('output3');
+      let output4 = document.getElementById('output4');
+      let output5 = document.getElementById('output5');
+
+      let score1 = document.getElementById('score');
+      let score = 0;
+      let total = 5;
+
+
+
+      //  q1
+      let selected1 = null;
+      if (document.getElementById('q1a').checked) {
+        selected1 = 'A';
+      } else if (document.getElementById('q1b').checked) {
+        selected1 = 'B';
+      } else if (document.getElementById('q1c').checked) {
+        selected1 = 'C';
+      } else if (document.getElementById('q1d').checked) {
+        selected1 = 'D';
+      }
+
+
+
+      if (selected1 === null) {
+        output1.innerText = " Please select an option.";
+        output1.style.color = "orange";
+      } else if (selected1 === "A") {
+        output1.innerText = "1.Correct answer!";
+        output1.style.color = "green";
+        score++;
+      } else {
+        output1.innerText = "1.Incorrect answer.";
+        output1.style.color = "red";
+      }
+
+      // q2
+       let selected2 = null;
+      if (document.getElementById('q2a').checked) {
+        selected2 = 'A';
+      } else if (document.getElementById('q2b').checked) {
+        selected2 = 'B';
+      } else if (document.getElementById('q2c').checked) {
+        selected2 = 'C';
+      } else if (document.getElementById('q2d').checked) {
+        selected2 = 'D';
+      }
+
+
+      if (selected2 === null) {
+        output2.innerText = " Please select an option.";
+        output2.style.color = "orange";
+      } else if (selected2 === "B") {
+        output2.innerText = "2.Correct answer.";
+        output2.style.color = "green";
+        score++;
+      } else {
+        output2.innerText = "2.Incorrect answer.";
+        output2.style.color = "red";
+      }
+      
+      // q3
+       let selected3 = null;
+      if (document.getElementById('q3a').checked) {
+        selected3 = 'A';
+      } else if (document.getElementById('q3b').checked) {
+        selected3 = 'B';
+      } else if (document.getElementById('q3c').checked) {
+        selected3 = 'C';
+      } else if (document.getElementById('q3d').checked) {
+        selected3 = 'D';
+      }
+
+
+
+      if (selected3 === null) {
+        output3.innerText = " Please select an option.";
+        output3.style.color = "orange";
+      } else if (selected3 === "B") {
+        output3.innerText = "3.Correct answer!";
+        output3.style.color = "green";
+        score++;
+      } else {
+        output3.innerText = "3.Incorrect answer.";
+        output3.style.color = "red";
+      }
+      
+
+    //  q4
+      let selected4 = null;
+      if (document.getElementById('q4a').checked) {
+        selected4 = 'A';
+      } else if (document.getElementById('q4b').checked) {
+        selected4 = 'B';
+      } else if (document.getElementById('q4c').checked) {
+        selected4 = 'C';
+      } else if (document.getElementById('q4d').checked) {
+        selected4 = 'D';
+      }
+
+
+
+      if (selected4 === null) {
+        output4.innerText = " Please select an option.";
+        output4.style.color = "orange";
+      } else if (selected4 === "A") {
+        output4.innerText = "4.Correct answer!";
+        output4.style.color = "green";
+        score++;
+      } else {
+        output4.innerText = "4.Incorrect answer.";
+        output4.style.color = "red";
+      }
+
+
+      // q5
+       let selected5 = null;
+      if (document.getElementById('q5a').checked) {
+        selected5 = 'A';
+      } else if (document.getElementById('q5b').checked) {
+        selected5 = 'B';
+      } else if (document.getElementById('q5c').checked) {
+        selected5 = 'C';
+      } else if (document.getElementById('q5d').checked) {
+        selected5 = 'D';
+      }
+
+
+
+      if (selected5 === null) {
+        output5.innerText = " Please select an option.";
+        output5.style.color = "orange";
+      } else if (selected5 === "C") {
+        output5.innerText = "5.Correct answer!";
+        output5.style.color = "green";
+        score++;
+      } else {
+        output5.innerText = "5.Incorrect answer.";
+        output5.style.color = "red";
+      }
+
+
+      score1.innerText = "You scored " + score + " out of " + total + ".";
+      score1.style.color ="blue";
+      
+    }
+    
+
+    
+</script>
+

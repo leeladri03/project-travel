@@ -1,0 +1,301 @@
+body{
+    font-family: Ancizar Serif;
+}
+.name{
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+.name:hover{
+  color: orange;
+  transform: scale(1.2);
+}
+.sign{
+  background-color: black;
+  color: #E5E5E5;
+  border-radius: 10px;
+}
+.sign:hover{
+  background-color: #e15b3c;
+}
+
+/* second row */
+
+
+.test1 p{
+  color: orange;
+  font-size: large;
+  font-weight: 700;
+}
+.test2 h1{
+  font-size: 70px;
+  font-weight: 700;
+  font-family: Ancizar Serif;
+
+}
+.test3 p{
+  font-weight: 700;
+  color: #6C708D;
+
+}
+.test4 {
+  padding: 30px;
+  
+
+}
+.test4 l{
+  font-size: larger;
+  
+}
+.test4 button{
+  width: 150px;
+  height: 50px;
+  background-color: orange;
+  color: aliceblue;
+  border-radius: 10px;
+  border: none;
+  border: 10px 10px, solid orange;
+}
+
+
+.box{
+  width: 100%;
+  height: 100%;
+}
+.girl{
+  max-width: 100%;
+  height: auto; 
+}
+.box{
+  position: relative;
+}
+.plane{
+  position: absolute;
+  left: 20%;
+}
+.plane1{
+  position: absolute;
+  left: 77%;
+  top: 10%;
+}
+@media screen {
+  .plane, .plane1{
+    width: 25%;
+    height: auto;
+  }
+
+}
+
+/* third row */
+.offer{
+  text-align: center;
+
+}
+.offer p{
+  font-size: large;
+  font-weight: 500;
+  color: #646887;
+}
+.offer h1{
+  font-size: 60px;
+  color: #14183E;
+}
+
+/* fourth row */
+
+.feature-box {
+  padding: 30px 20px;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #f9f9f9;
+}
+
+.feature-box:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  transform: scale(1.2);
+}
+
+
+.feature-icon {
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c2c51;
+  margin-bottom: 12px;
+}
+
+.feature-description {
+  font-size: 16px;
+  color: #6d6e8d;
+  line-height: 1.6;
+}
+
+/* fifth row */
+.section-title small {
+      color: #6c757d;
+      font-size: 20px;
+      font-weight: 200;
+    }
+
+    .section-title h2 {
+      font-weight: 700;
+      font-size: 50px;
+    }
+
+/* sixth row */
+
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #181e4b;
+}
+
+.destination-card {
+  background: #ffffff;
+  border-radius: 20px 20px 20px 20px solid black;
+  overflow: hidden;
+  box-shadow: 10px  rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  
+}
+
+.card-content {
+  background: silver;
+  border-top: none;
+}
+
+.location {
+  font-weight: 600;
+  color: #5e6282;
+}
+
+.price {
+  font-weight: 600;
+  color: #5e6282;
+}
+
+.trip-info {
+  color: #5e6282;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trip-info i {
+  color: #f15a29;
+}
+
+
+/* next */
+
+
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+}
+
+.icon-box.yellow {
+  background-color: #fcd34d;
+}
+
+.icon-box.red {
+  background-color: #f87171;
+}
+
+.icon-box.teal {
+  background-color: #0ea5e9;
+}
+
+.trip-card {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.trip-card img {
+  width: 100%;
+  height: auto;
+}
+
+.ongoing-box {
+  bottom: -30px;
+  right: -30px;
+  width: 200px;
+}
+
+.progress {
+  background-color: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.testimonial-card {
+  max-width: 480px;
+  z-index: 2;
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 3px solid #f43f5e; /* pink border */
+}
+
+.testimonial-shadow-card {
+  bottom: -60px;
+  left: 200px;
+  background-color: #fdfdfd;
+  z-index: 1;
+  max-width: 150px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: #1e1e3d;
+}
+
+.testimonial-arrows {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow-btn {
+  width: 36px;
+  height: 36px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 36px;
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
