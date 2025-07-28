@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare Students</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: linear-gradient(90deg, rgb(54, 204, 159), rgb(15, 88, 191));
+      color: white;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Match Result</h2>
+  <div id="output"></div>
+
+<script>
+  const student = {
+    prasanna: "roll number: 55, age: 25, Group: MCA",
+    santhosh: "roll number: 53, age: 22, Group: MCA",
+    leela: "roll number: 54, age: 26, Group: MCA",
+    Avinash: "roll number: 56, age: 30, Group: MBA"
+  };
+
+  const student1 = {
+    prasanna1: "roll number: 55, age: 25, Group: MCA",
+    santhosh: "roll number: 53, age: 25, Group: MCA",
+    leela1: "roll number: 54, age: 26, Group: MCA",
+    Avinash: "roll number: 56, age: 35, Group: MBA"
+  };
+
+  let result = "";
+
+  let keys1 = Object.keys(student);
+  let keys2 = Object.keys(student1);
+
+  for (let i = 0; i < keys1.length; i++) {
+    let name1 = keys1[i];
+    let name2 = keys2[i];
+
+    if (name1 === name2) {
+      
+
+    
+      if (student[name1] === student1[name2]) {
+        result += name1 + ":  name matched and Values Matched<br>";
+      } else {
+        result += name1 + ":  name matched and Values Not Matched<br>";
+      }
+
+    } else {
+      result += name1 + " and " + name2 + ": Name Unmatched and values matched<br>";
+    }
+  }
+
+  document.getElementById("output").innerHTML = result;
+</script>
+
+</body>
+</html>

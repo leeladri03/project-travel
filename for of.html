@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+      let cars = [
+    [
+        "car11","car12","car13","car14"
+    ],
+    [
+        "car21","car22","car23","car44"
+    ],
+    [
+        "car31","car32","car33","car34"
+    ]
+];
+
+for (let carname in cars){
+    console.log(carname);
+}
+
+let table = [
+    ["1","2","3","4"],
+    ["5","6","7","8"],
+    ["15","27","38","9"]
+];
+
+console.log(table[2][3]);
+
+let tab = {
+    name:"yaswanth", age:24, dept:"IT"
+};
+
+for (let [key, value] of Object.entries(tab)){
+    console.log(key, value);
+}
+</script>
+   
+</body>
+</html>

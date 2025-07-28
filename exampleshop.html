@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Single Product Purchase</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 260px;
+      margin: auto;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .product-name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .quantity-control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .quantity-control button {
+      font-size: 18px;
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    .quantity {
+      font-size: 18px;
+      min-width: 20px;
+    }
+
+    #ok-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Buy Product</h2>
+
+  <div class="card">
+    <img src="imagess/hoddie.jpeg" alt="Product Image">
+    <div class="product-name">Hoddie</div>
+    <div class="price">₹100</div>
+    <div class="quantity-control">
+      <button onclick="changeQty(-1)">−</button>
+      <span class="quantity" id="qty">0</span>
+      <button onclick="changeQty(1)">+</button>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="imagess/hoddie.jpeg" alt="Product Image">
+    <div class="product-name">Hoddie</div>
+    <div class="price">₹100</div>
+    <div class="quantity-control">
+      <button onclick="changeQty(-1)">−</button>
+      <span class="quantity" id="qty">0</span>
+      <button onclick="changeQty(1)">+</button>
+    </div>
+  </div>
+
+  <button id="ok-btn" onclick="calculateTotal()">OK</button>
+
+  <div id="result"></div>
+
+  <script>
+    let price = [100, 100];
+    let quantity = [0, 0];
+    
+     
+    function changeQty(input){
+        quantity
+         += input;
+        if (quantity < 0) quantity =0;
+        document.getElementById("qty").innerText = quantity;
+    }
+
+    function calculateTotal(){
+        let total = 0;
+        total = price * quantity;
+        document.getElementById("result").innerText = "Total Amount : " + total;
+    }
+  </script>
+
+</body>
+</html>
