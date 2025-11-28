@@ -20,24 +20,26 @@
 </head>
 <body>
 
-  
-
   <h2>Lucky Number Checker</h2>
   <p>Enter a number to see if it's your lucky number!</p>
 
   <input type="number" id="userInput" placeholder="Enter your number">
   <br><br>
   <button onclick="checkLucky()">Check</button>
+  <button onclick="resetGame()">Reset</button>
 
   <div id="result"></div>
+  <div id="attempts"></div>
 
   <script>
     
     const luckyNumber = 27;
+    let attempts = 0;
 
     function checkLucky() {
       const userInput = document.getElementById("userInput").value;
       const result = document.getElementById("result");
+      const attemptsDiv = document.getElementById("attempts");
 
       if (userInput === "") {
         result.innerText = "Please enter a number!";
@@ -47,20 +49,49 @@
 
       const userNumber = parseInt(userInput);
 
+      if (userNumber < 0) {
+        result.innerText = "Please enter a non-negative number!";
+        result.style.color = "red";
+        return;
+      }
+
+      attempts++;
+      attemptsDiv.innerText = `Attempts: ${attempts}`;
+
       if (userNumber === luckyNumber) {
-        result.innerText = " Congratulations! You found the Lucky Number!";
+        result.innerText = `Congratulations! You found the Lucky Number in ${attempts} attempts!`;
         result.style.color = "green";
+        document.getElementById("userInput").disabled = true;
+        document.getElementById("check").disabled = true;
       } else if (Math.abs(userNumber - luckyNumber) <= 2) {
-        result.innerText = " You're so close to the Lucky Number!";
+        if (userNumber < luckyNumber) {
+          result.innerText = "You're so close to the Lucky Number! Try a higher number.";
+        } else {
+          result.innerText = "You're so close to the Lucky Number! Try a lower number.";
+        }
         result.style.color = "orange";
       } else {
-        result.innerText = " Sorry, that's not the Lucky Number.";
+        if (userNumber < luckyNumber) {
+          result.innerText = "Sorry, that's not the Lucky Number. Try a higher number.";
+        } else {
+          result.innerText = "Sorry, that's not the Lucky Number. Try a lower number.";
+        }
         result.style.color = "darkred";
       }
     }
 
+    function resetGame() {
+      const userInput = document.getElementById("userInput");
+      const result = document.getElementById("result");
+      const attemptsDiv = document.getElementById("attempts");
 
-    
+      userInput.value = "";
+      result.innerText = "";
+      attemptsDiv.innerText = "";
+      attempts = 0;
+      userInput.disabled = false;
+      document.getElementById("check").disabled = false;
+    }
   </script>
 
 </body>
