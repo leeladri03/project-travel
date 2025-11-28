@@ -85,10 +85,10 @@
     <h2>Gold Loan Calculator</h2>
 
     <label>Gold Weight (grams)</label>
-    <input type="number" id="weight" placeholder="e.g., 20" oninput="calculateLoan()">
+    <input type="number" id="weight" placeholder="e.g., 20">
 
     <label for="purity">Gold Purity (karat):</label>
-    <select id="purity" onchange="calculateLoan()">
+    <select id="purity">
 
       <option value="24">24K</option>
       <option value="22">22K</option>
@@ -96,70 +96,46 @@
       <option value="18">18K</option>
     </select><br>
 
-    <label>Loan Percentage (%):</label>
-    <input type="number" id="loanPercentage" value="50" oninput="calculateLoan()">
-
-    <label>Interest Rate (%):</label>
-    <input type="number" id="interestRate" value="2" oninput="calculateLoan()">
-
-    <label>Maximum Weight Limit (grams):</label>
-    <input type="number" id="maxWeight" value="100" oninput="calculateLoan()">
+    <button onclick="calculateLoan()">Calculate Loan Amount</button>
 
     <div>
       <label>Loan Amount (₹)</label>
       <p class="space" id="result"></p>
     </div>
 
-    <div>
-      <label>Gold Value (₹)</label>
-      <p class="space" id="goldValue"></p>
-    </div>
-
-    <div>
-      <label>Interest per Month (₹)</label>
-      <p class="space" id="result1"></p>
-    </div>
-
-    <div>
-      <label>Total Repayment Amount (₹)</label>
-      <p class="space" id="totalRepayment"></p>
-    </div>
+    <label>Interest per Month (₹)</label>
+    <p class="space" id="result1"></p>
   </div>
 
   <script>
     function calculateLoan() {
       let weight = parseFloat(document.getElementById("weight").value);
       let purity = parseInt(document.getElementById("purity").value);
-      let loanPercentage = parseFloat(document.getElementById("loanPercentage").value);
-      let interestRate = parseFloat(document.getElementById("interestRate").value);
-      let maxWeight = parseFloat(document.getElementById("maxWeight").value);
+      let ratePerGram = 0;
 
-      if (weight <= 0 || weight > maxWeight) {
-        document.getElementById("result").innerText = "Invalid weight";
+     
+
+      if (purity === 24) {
+        ratePerGram = 10000;
+      } else if (purity === 22) {
+        ratePerGram = 8000;
+      } else if (purity === 20) {
+        ratePerGram = 6000;
+      } else if (purity === 18) {
+        ratePerGram = 4000;
+      } else {
+        document.getElementById("result").innerText = "Invalid purity selected";
         document.getElementById("result1").innerText = "";
-        document.getElementById("goldValue").innerText = "";
-        document.getElementById("totalRepayment").innerText = "";
-        return;
       }
 
-      let ratePerGram = {
-        24: 10000,
-        22: 8000,
-        20: 6000,
-        18: 4000
-      };
+      let Goldvalue = weight * ratePerGram;
+      let loanAmount = (Goldvalue * 50)/100;
+      let interest = (loanAmount * 2)/100; 
 
-      let goldValue = weight * ratePerGram[purity];
-      let loanAmount = (goldValue * loanPercentage) / 100;
-      let interest = (loanAmount * interestRate) / 100;
-      let totalRepayment = loanAmount + interest;
+       let rupee = "\u20B9";
 
-      let rupee = "\u20B9";
-
-      document.getElementById("result").innerText = rupee + " " + loanAmount.toFixed(2);
-      document.getElementById("result1").innerText = rupee + " " + interest.toFixed(2);
-      document.getElementById("goldValue").innerText = rupee + " " + goldValue.toFixed(2);
-      document.getElementById("totalRepayment").innerText = rupee + " " + totalRepayment.toFixed(2);
+  document.getElementById("result").innerText = rupee + " " + loanAmount.toFixed(2);
+  document.getElementById("result1").innerText = rupee + " " + interest.toFixed(2);
     }
   </script>
 
