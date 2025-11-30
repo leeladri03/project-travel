@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HTML and JavaScript quiz">
+    <meta name="description" content="HTML and JavaScript quiz to test your knowledge">
     <title>HTML and JavaScript Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -55,14 +55,112 @@
             <button id="submit-btn">Submit</button>
             <button id="reset-btn">Reset</button>
         </form>
-        <p id="output1"></p>
-        <p id="output2"></p>
-        <p id="output3"></p>
-        <p id="output4"></p>
-        <p id="output5"></p>
+        <p id="output"></p>
         <p id="score"></p>
     </div>
 
     <script src="script.js" defer></script>
 </body>
 </html>
+
+style.css:
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="radio"] {
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+script.js:
+const questions = [
+    {
+        question: "What does HTML stand for?",
+        options: ["Hyper Text Markup Language", "High Text Markup Language", "Hyperlink and Text Markup Language", "Home Tool Markup Language"],
+        answer: 0
+    },
+    {
+        question: "What is the correct HTML element for inserting a line break?",
+        options: ["<break>", "<br>", "<lb>", "<line>"],
+        answer: 1
+    },
+    {
+        question: "How do you write 'Hello World' in an alert box?",
+        options: ["msg(\"Hello World\")", "alert(\"Hello World\")", "alertBox(\"Hello World\")", "display(\"Hello World\")"],
+        answer: 1
+    },
+    {
+        question: "Which HTML element is used to define an internal style sheet?",
+        options: ["<style>", "<css>", "<script>", "<head>"],
+        answer: 0
+    },
+    {
+        question: "How do you create a function in JavaScript?",
+        options: ["function = myFunction()", "function:myFunction()", "function myFunction()", "create function myFunction()"],
+        answer: 2
+    }
+];
+
+const form = document.getElementById("quiz-form");
+const submitBtn = document.getElementById("submit-btn");
+const resetBtn = document.getElementById("reset-btn");
+const output = document.getElementById("output");
+const scoreElement = document.getElementById("score");
+
+let score = 0;
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    score = 0;
+    for (let i = 0; i < questions.length; i++) {
+        const questionId = `q${i + 1}`;
+        const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+        if (selectedOption && questions[i].answer === parseInt(selectedOption.value)) {
+            score++;
+        }
+    }
+    scoreElement.textContent = `Your score: ${score} out of ${questions.length}`;
+    output.textContent = "";
+    for (let i = 0; i < questions.length; i++) {
+        const questionId = `q${i + 1}`;
+        const selectedOption = document.querySelector(`input[name="${questionId}"]:checked`);
+        if (selectedOption) {
+            output.textContent += `Question ${i + 1}: You answered ${selectedOption.labels[0].textContent}. Correct answer is ${questions[i].options[questions[i].answer]}\n`;
+        } else {
+            output.textContent += `Question ${i + 1}: You did not answer this question.\n`;
+        }
+    }
+});
+
+resetBtn.addEventListener("click", () => {
+    form.reset();
+    scoreElement.textContent = "";
+    output.textContent = "";
+});
